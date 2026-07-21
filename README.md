@@ -1,6 +1,15 @@
-# BroMind model catalog
+# BroMind model catalog & site
 
-Starter-model suggestions for the [BroMind](https://github.com/bromind-ai) browser
+This repository serves two public assets for the BroMind browser extension:
+
+- **The website** (GitHub Pages): the landing page (`index.html`) and the
+  privacy policy (`privacy.html`) at
+  `https://bromind-ai.github.io/model-catalog/`.
+- **The model catalog** (`starter-models.json`), described below.
+
+## Model catalog
+
+Starter-model suggestions for the BroMind browser
 extension's first-run wizard. The extension ships with a built-in copy of this
 list; it fetches `starter-models.json` from this repository **only** when the
 user explicitly clicks "Check for newer suggestions", and falls back to the

@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BroMind — Privacy Policy</title>
+<meta name="description" content="BroMind's privacy policy: no backend, no analytics, no telemetry. Your prompts go only to the model server you configure — by default, your own machine." />
+<style>
+  :root {
+    --ground: #fbfbfe;
+    --surface: #ffffff;
+    --surface-2: #f4f4fb;
+    --ink: #191927;
+    --muted: #5f5f78;
+    --accent: #4f46e5;
+    --accent-ink: #4f46e5;
+    --accent-soft: #eceafe;
+    --good: #0d9488;
+    --line: #e6e6f2;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #0c0c12; --surface: #15151f; --surface-2: #1c1c29;
+      --ink: #ececf5; --muted: #9a9ab8; --accent: #818cf8; --accent-ink: #a5b0ff;
+      --accent-soft: #1c1c33; --good: #2dd4bf; --line: #26263a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="light"] {
+    --ground: #fbfbfe; --surface: #ffffff; --surface-2: #f4f4fb; --ink: #191927;
+    --muted: #5f5f78; --accent: #4f46e5; --accent-ink: #4f46e5; --accent-soft: #eceafe;
+    --good: #0d9488; --line: #e6e6f2; color-scheme: light;
+  }
+  :root[data-theme="dark"] {
+    --ground: #0c0c12; --surface: #15151f; --surface-2: #1c1c29; --ink: #ececf5;
+    --muted: #9a9ab8; --accent: #818cf8; --accent-ink: #a5b0ff; --accent-soft: #1c1c33;
+    --good: #2dd4bf; --line: #26263a; color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--ground); color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.65; -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent-ink); }
+  header.nav {
+    position: sticky; top: 0; z-index: 20;
+    backdrop-filter: saturate(1.4) blur(12px);
+    background: color-mix(in srgb, var(--ground) 82%, transparent);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    width: min(760px, 92vw); margin-inline: auto;
+    display: flex; align-items: center; gap: 14px; padding: 14px 0;
+  }
+  .brand { font-weight: 700; letter-spacing: -.01em; text-decoration: none; color: var(--ink); }
+  .nav-inner .sp { margin-inline-start: auto; }
+  .toggle {
+    border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+    border-radius: 8px; padding: 4px 10px; cursor: pointer; font-size: 1rem;
+  }
+  .toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  main { width: min(760px, 92vw); margin-inline: auto; padding: clamp(32px, 6vw, 64px) 0 64px; }
+  h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); letter-spacing: -.02em; line-height: 1.1; margin: 0 0 6px; text-wrap: balance; }
+  .updated { color: var(--muted); font-size: .9rem; margin: 0 0 28px; }
+  h2 { font-size: 1.25rem; letter-spacing: -.01em; margin: 38px 0 10px; text-wrap: balance; }
+  p, li { max-width: 70ch; }
+  ul { padding-inline-start: 1.2em; }
+  li { margin: 8px 0; }
+  li::marker { color: var(--accent-ink); }
+  code {
+    font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, monospace;
+    font-size: .88em; background: var(--surface-2); border: 1px solid var(--line);
+    border-radius: 5px; padding: 1px 5px;
+  }
+  .callout {
+    border: 1px solid var(--line); border-inline-start: 3px solid var(--good);
+    background: var(--surface); border-radius: 10px; padding: 14px 18px; margin: 18px 0;
+  }
+  .callout strong { color: var(--good); }
+  .table-scroll { overflow-x: auto; margin: 14px 0; border: 1px solid var(--line); border-radius: 10px; }
+  table { border-collapse: collapse; width: 100%; font-size: .93rem; background: var(--surface); }
+  th, td { text-align: start; padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  th {
+    background: var(--surface-2); font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, monospace;
+    font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted);
+  }
+  footer {
+    border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem;
+  }
+  .foot-inner {
+    width: min(760px, 92vw); margin-inline: auto; padding: 22px 0;
+    display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center;
+  }
+  .foot-inner .sp { margin-inline-start: auto; }
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="./">BroMind</a>
+    <span class="sp"></span>
+    <a href="./">Home</a>
+    <button class="toggle" id="themeBtn" aria-label="Toggle theme" title="Toggle light / dark">◐</button>
+  </div>
+</header>
+
+<main>
+  <h1>BroMind Privacy Policy</h1>
+  <p class="updated">Last updated: 2026-07-21</p>
+
+  <p>BroMind is a browser extension that lets you chat with AI models running on <strong>your own machine</strong>. Its entire design goal is that your data stays with you. The claims below about what does and doesn't leave your device are checkable from the extension's network traffic (e.g. your browser's network inspector). BroMind is proprietary, closed-source software.</p>
+
+  <h2>What BroMind collects and transmits to us</h2>
+  <div class="callout"><strong>Nothing.</strong> BroMind has no backend, no analytics, no crash reporting, and no telemetry of any kind. The developer receives no data from the extension, ever.</div>
+
+  <h2>Where your data goes</h2>
+  <ul>
+    <li><strong>Prompts, chats, and page content</strong> are sent only to the model server <strong>you configure</strong> — by default a local server on your own machine (<code>localhost</code> / <code>127.0.0.1</code>, e.g. Ollama). If you deliberately configure a server on another machine, your prompts go there; BroMind warns you before you save an unencrypted (<code>http://</code>) non-local endpoint.</li>
+    <li><strong>Page content</strong> is read only when you ask (page-context toggle, Summarize, a right-click selection action, or the selection toolbar below), only from the active tab, and is sent only to your configured model server.</li>
+    <li><strong>Selection toolbar.</strong> When enabled (default on), a small toolbar appears when you select text — but only on sites you have granted BroMind access to (plus <code>localhost</code>/<code>127.0.0.1</code>). On other sites nothing is injected at all. The toolbar reads your current selection into memory to position itself; selection text is sent somewhere (to your model server, for a rewrite or a chat action) <strong>only when you click one of its buttons</strong>. Turn it off any time in Settings → Selection toolbar.</li>
+    <li><strong>Attached files.</strong> PDFs and images you attach to a chat are processed locally and sent only to your configured model server as part of that chat.</li>
+    <li><strong>Exports are yours to guard.</strong> The JSON chat export is a full-fidelity backup: for chats that used page context, an attached PDF, or attached images, it includes that content. Treat exported files like the chats themselves before sharing them (the per-chat Markdown copy omits that content).</li>
+    <li><strong>Conversations and settings</strong> (including any API key you enter) are stored locally in your browser's extension storage and IndexedDB. They never leave your machine except as part of requests to your configured server. Settings → Danger zone → "Wipe all BroMind data" deletes all stored data — chats, settings, keys — and revokes any per-site or broad host permissions you granted at runtime.</li>
+  </ul>
+
+  <h2>The one optional third-party request</h2>
+  <p>The starter-model catalog used during first-run setup ships inside the extension. Only if you explicitly click <strong>"Check for newer suggestions"</strong> does BroMind <em>attempt</em> to fetch a static JSON list from GitHub (<code>raw.githubusercontent.com</code>); if that request fails, the built-in list is used. Like any web request, the attempt reveals your IP address to GitHub. It sends no other data, and it never happens automatically.</p>
+
+  <h2>The Ollama connection fix</h2>
+  <p>Ollama rejects requests from browser-extension origins by default. When the "Ollama connection fix" is enabled (default on), BroMind rewrites the <code>Origin</code> header <strong>only on its own requests</strong> to <code>localhost</code>/<code>127.0.0.1</code> so your Ollama accepts them. This never affects other websites, other extensions, or requests to any other host, and you can turn it off in Settings.</p>
+
+  <h2>Permissions</h2>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th scope="col">Permission</th><th scope="col">Used for</th></tr></thead>
+      <tbody>
+        <tr><td><code>activeTab</code> + <code>scripting</code></td><td>Reading the current page when you ask a question about it.</td></tr>
+        <tr><td><code>storage</code></td><td>Your settings and chat history, locally.</td></tr>
+        <tr><td><code>sidePanel</code> (Chromium)</td><td>The chat panel UI.</td></tr>
+        <tr><td><code>declarativeNetRequestWithHostAccess</code></td><td>The Ollama connection fix described above.</td></tr>
+        <tr><td><code>contextMenus</code></td><td>The right-click selection actions.</td></tr>
+        <tr><td><code>scripting</code> (dynamic registration)</td><td>The selection toolbar is registered as a content script only for the origins you have granted (and localhost). It is never registered — and never runs — on a site you have not granted.</td></tr>
+        <tr><td><code>http://localhost/*</code>, <code>http://127.0.0.1/*</code></td><td>Talking to your local model server.</td></tr>
+        <tr><td>Optional host access</td><td>Requested at runtime, per site, only when you configure a non-local server, grant a specific site for page reading, or (Firefox fallback) allow page reading broadly. Granting a specific site also enables the selection toolbar on it. The broad all-sites grant does <strong>not</strong> enable the toolbar everywhere. Revocable in Settings.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Private browsing</h2>
+  <p>On Chromium browsers BroMind runs in incognito in "split" mode: <strong>chats and page content</strong> from an incognito session live in incognito's ephemeral storage and are gone when the session ends. Extension <strong>settings</strong> (configured servers, active model) are shared with your normal profile — that is how Chromium's split mode works for extension settings storage. On Firefox, BroMind is not available in private windows (Firefox lacks split mode; we chose unavailability over silently persisting private-window chats).</p>
+
+  <h2>Changes</h2>
+  <p>Any future change to data handling will be prominently disclosed in the changelog and the store listings before it ships. Questions or concerns: open an issue on the <a href="https://github.com/bromind-ai/model-catalog/issues">BroMind GitHub tracker</a>.</p>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <span>BroMind — your local AI, in every page.</span>
+    <span class="sp"></span>
+    <a href="./">Home</a>
+    <span>© 2026 BroMind · All rights reserved</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var btn = document.getElementById('themeBtn');
+    btn.addEventListener('click', function () {
+      var cur = document.documentElement.getAttribute('data-theme');
+      var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var effective = cur || (systemDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', effective === 'dark' ? 'light' : 'dark');
+    });
+  })();
+</script>
+</body>
+</html>
