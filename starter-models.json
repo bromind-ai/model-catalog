@@ -1,0 +1,20 @@
+[
+  {
+    "id": "llama3.2:3b",
+    "label": "Llama 3.2 3B",
+    "minRamGb": 8,
+    "note": "Small and fast — fine for summaries on modest hardware."
+  },
+  {
+    "id": "qwen3:8b",
+    "label": "Qwen3 8B",
+    "minRamGb": 16,
+    "note": "Strong all-rounder for chat and page Q&A."
+  },
+  {
+    "id": "gemma4:12b",
+    "label": "Gemma 4 12B",
+    "minRamGb": 16,
+    "note": "Great quality on a typical 16GB laptop."
+  }
+]
